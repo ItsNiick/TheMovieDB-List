@@ -1,0 +1,165 @@
+:root {
+	--bg-dark: #2b3a4a;
+	--text-light: #fff;
+	--card-bg: #fff;
+	--shadow: rgba(0,0,0,0.15);
+}
+
+body {
+	margin: 0;
+	font-family: 'Segoe UI', Roboto, sans-serif;
+	background-color: #e9ecef;
+}
+
+.app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header.header {
+	background-color: var(--bg-dark);
+	color: var(--text-light);
+	padding: 24px 0 32px;
+	text-align: center;
+}
+
+header h1 {
+	font-size: 2.2rem;
+	margin-bottom: 18px;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+}
+
+.search {
+	padding: 8px 12px;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	width: 250px;
+}
+
+.sort {
+	padding: 8px 12px;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+}
+
+main {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	padding: 32px 16px;
+}
+
+.movie-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	justify-content: center;
+	gap: 24px;
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.movie-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: var(--card-bg);
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 3px 10px var(--shadow);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.movie-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.poster {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	display: block;
+	border-bottom: 1px solid #ddd;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+
+
+.meta {
+	flex-grow: 1;
+	padding: 14px 10px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.title {
+	font-size: 1.1rem;
+	font-weight: 700;
+	margin: 6px 0 4px;
+	line-height: 1.3;
+	text-align: center;
+	width: 100%;
+}
+
+.release,
+.rating {
+	margin: 3px 0;
+	font-size: 0.95rem;
+	color: #333;
+	text-align: center;
+	width: 100%;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.pagination button {
+	background-color: var(--bg-dark);
+	color: var(--text-light);
+	border: none;
+	padding: 8px 16px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+	background-color: #1d2938;
+}
+
+.pagination button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.loading,
+.no-results {
+	text-align: center;
+	font-size: 1.2rem;
+	color: #555;
+	margin-top: 40px;
+}
